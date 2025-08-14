@@ -49,7 +49,7 @@ void bisseccao_Metodo(double a, double b, double precisao, ofstream &arquivo) {
             fa = fmeio;
         }
     }
-    arquivo << "Raiz aproximada: " << (a + b) / 2 << " após " << k << " iterações" << endl << endl;
+    arquivo << "Raiz aproximada: " << meio << " após " << k << " iterações" << endl << endl;
 }
 
 void newton_Metodo(double x0, double precisao, ofstream &arquivo) {
@@ -219,4 +219,5 @@ int main() {
     entrada.close();
     arquivo.close();
     return 0;
+
 }
