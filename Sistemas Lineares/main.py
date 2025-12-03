@@ -326,3 +326,4 @@ if __name__ == "__main__":
     app = LinearSolverApp(root)
 
     root.mainloop()
+
