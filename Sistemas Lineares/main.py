@@ -4,9 +4,6 @@ import numpy as np
 import time
 import os
 
-# ATENÇÃO: É NECESSÁRIO QUE ESTES MÓDULOS EXISTAM E CONTENHAM AS FUNÇÕES REFERENCIADAS!
-# Ex: gauss, fatoracaoLU, cholesky_solve, gauss_jacobi, gauss_seidel, etc.
-# Se os módulos não existirem, o código falhará com um NameError/ImportError.
 from metodos_lineares import *
 from metodos_numericos import *
 
@@ -277,7 +274,7 @@ class LinearSolverApp:
             messagebox.showerror("Erro de Cálculo de Raiz", str(e))
 
     def create_outros_tab(self, tab):
-        func_frame = ttk.LabelFrame(tab, text="✏️ Definição das Funções (Use 'x' como variável)")
+        func_frame = ttk.LabelFrame(tab, text="Definição das Funções (Use 'x' como variável)")
         func_frame.pack(pady=10, padx=10, fill="x")
 
         ttk.Label(func_frame, text="f(x) =").grid(row=0, column=0, padx=5, pady=5, sticky="w")
@@ -327,4 +324,5 @@ class LinearSolverApp:
 if __name__ == "__main__":
     root = tk.Tk()
     app = LinearSolverApp(root)
+
     root.mainloop()
