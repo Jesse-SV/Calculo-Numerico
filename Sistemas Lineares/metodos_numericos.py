@@ -1,13 +1,11 @@
 import numpy as np
 
 def condicao_parada_raiz(x_atual, x_anterior, f, tol):
-    """Verifica se |x_atual - x_anterior| <= tol ou se |f(x_atual)| <= tol."""
     if np.abs(x_atual - x_anterior) <= tol or np.abs(f(x_atual)) <= tol:
         return True
     return False
 
 def bisseccao(f, a, b, tol, max_iter):
-    """Método da Bisseccao."""
     fa, fb = f(a), f(b)
     if fa * fb > 0: raise ValueError("f(a) e f(b) têm o mesmo sinal.")
     
@@ -29,7 +27,6 @@ def bisseccao(f, a, b, tol, max_iter):
 
 
 def mil(f, phi, x0, tol, max_iter):
-    """Método Iterativo Linear (MIL)."""
     x_atual = x0; k = 0
     
     if np.abs(f(x0)) < tol: return x0, 0
@@ -47,7 +44,7 @@ def mil(f, phi, x0, tol, max_iter):
 
 
 def newton(f, f_linha, x0, tol, max_iter):
-    """Método de Newton."""
+
     x_atual = x0; k = 0
     
     while k < max_iter:
@@ -65,7 +62,6 @@ def newton(f, f_linha, x0, tol, max_iter):
 
 
 def secante(f, x0, x1, tol, max_iter):
-    """Método da Secante."""
     f0, f1 = f(x0), f(x1); k = 0
     
     while k < max_iter:
@@ -82,7 +78,6 @@ def secante(f, x0, x1, tol, max_iter):
 
 
 def regula_falsi(f, a, b, tol, max_iter):
-    """Método da Regula Falsi."""
     fa, fb = f(a), f(b)
     
     if fa * fb > 0: raise ValueError("f(a) e f(b) têm o mesmo sinal.")
